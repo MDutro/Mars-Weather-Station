@@ -10,7 +10,7 @@ export class MarsWeather extends React.Component {
 
 // Get weather data from NASA API
   componentDidMount() {
-    fetch("https://api.nasa.gov/insight_weather/?api_key=k547ehnkSmMt0ML6IcR1K7s5gx03NKUA0LOVHl0b&feedtype=json&ver=1.0")
+    fetch("url")
     .then(res => res.json())
     .then(data => {
       // Take the day number key and add it to the AT object as a value so it can be passed as a prop to WeatherCards.js
