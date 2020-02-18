@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 
 const WeatherCards = (props) => {
   return (
-    <Card style={{ width: '7.75rem' }}>
+    <Card style={{ width: '8rem' }}>
       <Card.Body>
         <Card.Title>{props.sol}</Card.Title>
         {/* Take a slice of the UTC format date string to get 3 digit month, 2 digit day format */}

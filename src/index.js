@@ -2,10 +2,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import ReactDOM from "react-dom";
 import {MarsWeather} from "./MarsWeather";
+import {LocalWeather} from "./LocalWeather";
 
 class App extends React.Component {
   render () {
-    return <MarsWeather />
+    return (
+      <div>
+        <MarsWeather />
+        <LocalWeather />
+      </div> 
+    );
   }
 }
   

@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import WeatherCards from './WeatherCards';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 
 export class MarsWeather extends React.Component {
   state =  {weather : null};
@@ -49,19 +50,20 @@ export class MarsWeather extends React.Component {
   };
 
   render() {
-    console.log(this.state.weather);
     return (
      <div>
        <Container>
-        <Jumbotron className="bg-transparent">
+         {/* bg-transparent */}
+        <Jumbotron className="">
         <h1>Martian Weather Station</h1>
           <p>
             Weather Data from Elysium Planitia
           </p>
         </Jumbotron>
       </Container>
-        <Row className="justify-content-sm-start ml-sm-2 ml-1">
-          {/* Only render the weather cards if the fetch API call has completed */}
+      <Container>
+        <Row className="justify-content-start" style={{overflow: 'hidden'}}>
+        {/* Only render the weather cards if the fetch API call has completed */}
           {this.state.weather && this.state.weather.map((val, index) => (
             <Col sm="auto" key={index}>
               <WeatherCards
@@ -75,7 +77,8 @@ export class MarsWeather extends React.Component {
             </Col>))
           }
         </Row>
-        <button onClick={this.onClick}>Convert Temps</button>
+        <Button onClick={this.onClick} style={{ marginTop: '0.5rem'}}>Convert Temps</Button>
+      </Container>
      </div>   
     );
   }    
