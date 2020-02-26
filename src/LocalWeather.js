@@ -32,7 +32,7 @@ export class LocalWeather extends React.Component {
             <Card.Text>
               With supporting text below as a natural lead-in to additional content.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">Convert Temps</Button>
           </Card.Body>
         </Card>
       </Container>

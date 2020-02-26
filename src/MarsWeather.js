@@ -5,6 +5,7 @@ import WeatherCards from './WeatherCards';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+import convert from './convert';
 
 export class MarsWeather extends React.Component {
   state =  {weather : null};
@@ -27,20 +28,20 @@ export class MarsWeather extends React.Component {
   }
 
   // This function converts temps to C or F depending on the state of isFarenheit
-  convert = (temp, isFarenheit) => {
-    if(isFarenheit === 'C') {
-      return (temp * (9/5)) + 32
-    } else if (isFarenheit === 'F') {
-      return (temp - 32) * (5/9)
-    }
-  }   
+  // convert = (temp, isFarenheit) => {
+  //   if(isFarenheit === 'C') {
+  //     return (temp * (9/5)) + 32
+  //   } else if (isFarenheit === 'F') {
+  //     return (temp - 32) * (5/9)
+  //   }
+  // }   
 
   // Use convert() to calculate C or F for min and max temps for each Martian day
   onClick = () => {
     this.setState({weather: this.state.weather.map(weatherDay => {
-      const newMn = this.convert(weatherDay.AT.mn, weatherDay.AT.isFarenheit);
+      const newMn = convert(weatherDay.AT.mn, weatherDay.AT.isFarenheit);
       weatherDay.AT.mn = newMn;
-      const newMx = this.convert(weatherDay.AT.mx, weatherDay.AT.isFarenheit);
+      const newMx = convert(weatherDay.AT.mx, weatherDay.AT.isFarenheit);
       weatherDay.AT.mx = newMx;
       // Toggle C and F to trigger the correct calculation in convert()
       weatherDay.AT.isFarenheit =  (weatherDay.AT.isFarenheit ==='C') ? 'F' : 'C';
