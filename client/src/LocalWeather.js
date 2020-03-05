@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import ZipCode from "./ZipCode";
 import WeatherResults from "./WeatherResults";
 
@@ -11,7 +12,14 @@ export class LocalWeather extends React.Component {
     console.log(this.state)
   }
 
-  onFormSubmit = 
+  onFormSubmit = event => {
+    event.preventDefault();
+
+    axios.get(`http://localhost:3001/search?zip=${this.state.zip}`)
+    .then(response => response.data)
+    .catch(err => console.log(err))
+
+  }
   
 
   GetWeather = () => {
