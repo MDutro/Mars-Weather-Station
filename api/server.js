@@ -20,8 +20,8 @@ app.get('/search', (req, res) => {
   const localUrl = `http://api.openweathermap.org/data/2.5/weather?zip=${req.query.zip},us&units=metric&appid=${local}`
   axios.get(localUrl)
   .then(response => response.data)
-  .then(response => console.log(response))
-  .then(response => res.send(response))
+  .then(data => res.send(JSON.stringify(data)))
+  .then(data => console.log(data))
   .catch(err => console.log(err))
 });
 

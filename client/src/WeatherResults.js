@@ -8,9 +8,9 @@ const WeatherResults = props => {
   return (
     <Container>
       <Card>
-        <Card.Header>{props.city}</Card.Header>
+        <Card.Header>Your Current Weather</Card.Header>
         <Card.Body>
-          <Card.Title>Your Current Weather</Card.Title>
+          <Card.Title>{props.city}</Card.Title>
           <Card.Text>
             {props.low} C / {props.high} C
           </Card.Text>
