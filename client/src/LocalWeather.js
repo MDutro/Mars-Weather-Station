@@ -17,20 +17,28 @@ export class LocalWeather extends React.Component {
 
     axios.get(`http://localhost:3001/search?zip=${this.state.zip}`)
     .then(response => response.data)
+    .then(response => console.log(response))
+    .then(response =>
+      // const localWeather = response.isFarenheit = 'C'
+      this.setState({localWeather: response})
+    )
     .catch(err => console.log(err))
-
   }
   
 
   GetWeather = () => {
-    const localWeather = this.state.localWeather;
-    if (!localWeather) {
+    // const localWeather = this.state.localWeather;
+    if (!this.state.localWeather) {
       return <ZipCode 
         handleChange={this.handleChange}
         onFormSubmit={this.onFormSubmit}
         />
     }
-    return <WeatherResults />
+    return <WeatherResults 
+      // city = 
+      // low = {this.state.localWeather.main.temp_min}
+      // high = {this.state.localWeather.main.temp_max}
+    />
   }
 
   render() {
