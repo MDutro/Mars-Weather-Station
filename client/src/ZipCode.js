@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 const ZipCode = props => {
   return (
     <Container>
-      <Form onSubmit={props.onFormSubmit} style={{paddingTop: '1.0rem', width: '25vw'}}>
+      <Form onSubmit={props.onFormSubmit} style={{width: '25vw'}}>
         <Form.Group>
           <Form.Label>Find Local Weather</Form.Label>
           <Form.Control type="text" 

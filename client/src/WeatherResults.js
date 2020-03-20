@@ -15,6 +15,7 @@ const WeatherResults = props => {
             {props.low} C / {props.high} C
           </Card.Text>
           <Button variant="primary">Convert Temps</Button>
+          <Button variant="primary" style={{marginLeft: '0.5rem'}}>Go Back</Button>
         </Card.Body>
       </Card>
     </Container>

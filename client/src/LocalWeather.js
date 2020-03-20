@@ -44,7 +44,7 @@ export class LocalWeather extends React.Component {
     console.log(this.state.localWeather);
     return (
       <div>
-        <this.GetWeather />
+        <this.GetWeather style={{paddingTop: '0'}}/>
       </div>
     );
   }

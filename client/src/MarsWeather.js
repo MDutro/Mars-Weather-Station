@@ -1,6 +1,5 @@
 import React from "react";
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import Container from 'react-bootstrap/Container';
 import WeatherCards from './WeatherCards';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -36,7 +35,7 @@ export class MarsWeather extends React.Component {
       const newMx = convert(weatherDay.AT.mx, weatherDay.AT.isFarenheit);
       weatherDay.AT.mx = newMx;
       // Toggle C and F to trigger the correct calculation in convert()
-      weatherDay.AT.isFarenheit =  (weatherDay.AT.isFarenheit ==='C') ? 'F' : 'C';
+      weatherDay.AT.isFarenheit =  (weatherDay.AT.isFarenheit === 'C') ? 'F' : 'C';
       return weatherDay;
     })
     });
@@ -45,7 +44,6 @@ export class MarsWeather extends React.Component {
   render() {
     return (
      <div>
-       <Container>
          {/* bg-transparent */}
         <Jumbotron className="">
         <h1>Martian Weather Station</h1>
@@ -53,9 +51,7 @@ export class MarsWeather extends React.Component {
             Weather Data from Elysium Planitia
           </p>
         </Jumbotron>
-      </Container>
-      <Container>
-        <Row className="justify-content-start" style={{overflow: 'hidden'}}>
+        <Row className="justify-content-start" style={{overflow: 'hidden'}, {marginBottom: '0.5rem'}}>
         {/* Only render the weather cards if the fetch API call has completed */}
           {this.state.weather && this.state.weather.map((val, index) => (
             <Col sm="auto" key={index}>
@@ -70,8 +66,7 @@ export class MarsWeather extends React.Component {
             </Col>))
           }
         </Row>
-        <Button onClick={this.onClick} style={{ marginTop: '0.5rem'}}>Convert Temps</Button>
-      </Container>
+        <Button onClick={this.onClick} style={{marginBottom: '2rem'}}>Convert Temps</Button>
      </div>   
     );
   }    
