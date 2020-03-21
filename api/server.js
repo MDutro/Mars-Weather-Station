@@ -21,7 +21,6 @@ app.get('/search', (req, res) => {
   axios.get(localUrl)
   .then(response => response.data)
   .then(data => res.send(JSON.stringify(data)))
-  .then(data => console.log(data))
   .catch(err => console.log(err))
 });
 

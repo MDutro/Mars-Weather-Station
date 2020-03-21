@@ -12,9 +12,9 @@ const WeatherResults = props => {
         <Card.Body>
           <Card.Title>{props.city}</Card.Title>
           <Card.Text>
-            {props.low} C / {props.high} C
+            {props.low} {props.deg} / {props.high} {props.deg}
           </Card.Text>
-          <Button variant="primary">Convert Temps</Button>
+          <Button onClick={props.onConvert} variant="primary">Convert Temps</Button>
           <Button onClick={props.getNewZip} variant="primary" style={{marginLeft: '0.5rem'}}>Go Back</Button>
         </Card.Body>
       </Card>

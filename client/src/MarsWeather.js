@@ -14,7 +14,6 @@ export class MarsWeather extends React.Component {
     fetch("http://localhost:3001")
     .then(res => res.json())
     .then(data => {
-      console.log(data);
       // Take the day number key and add it to the AT object as a value so it can be passed as a prop to WeatherCards.js
       const weather = data.sol_keys.map(key => {
         data[key].AT.dayNumber = key*1;
@@ -35,7 +34,7 @@ export class MarsWeather extends React.Component {
       const newMx = convert(weatherDay.AT.mx, weatherDay.AT.isFarenheit);
       weatherDay.AT.mx = newMx;
       // Toggle C and F to trigger the correct calculation in convert()
-      weatherDay.AT.isFarenheit =  (weatherDay.AT.isFarenheit === 'C') ? 'F' : 'C';
+      weatherDay.AT.isFarenheit = (weatherDay.AT.isFarenheit === 'C') ? 'F' : 'C';
       return weatherDay;
     })
     });
