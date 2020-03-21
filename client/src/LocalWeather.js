@@ -20,18 +20,18 @@ export class LocalWeather extends React.Component {
     axios.get(`http://localhost:3001/search?zip=${this.state.zip}`)
     .then(response => response.data)
     .then(data => {
-        // Add key value pair for temperature units for conversion function later on
-        // data.main.isFarenheit = 'C'
         console.log(data)
         this.setState({localWeather: data})
+        // Break up state into chunks that are easy to manipulate
     }).then(() => this.setState({ city: this.state.localWeather.name, localMin: this.state.localWeather.main.temp_min, localMax: this.state.localWeather.main.temp_max }))
     .catch(err => console.log(err))
   }
 
   onConvert = () => {
-    
+    // Convert temps between Celcius and Farenheit
     const newMin = convert(this.state.localMin, this.state.isFarenheit)
     const newMax = convert(this.state.localMax, this.state.isFarenheit)
+    // Change state of units to pass into props for WeatherResults child component
     const units = (this.state.isFarenheit === 'C') ? 'F' : 'C'
     this.setState({localMin: newMin, localMax: newMax, isFarenheit: units})
     return true
