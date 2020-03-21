@@ -8,14 +8,14 @@ const WeatherResults = props => {
   return (
     <Container>
       <Card>
-        <Card.Header>Your Current Weather</Card.Header>
+        <Card.Header>Current Local Weather</Card.Header>
         <Card.Body>
           <Card.Title>{props.city}</Card.Title>
           <Card.Text>
             {props.low} C / {props.high} C
           </Card.Text>
           <Button variant="primary">Convert Temps</Button>
-          <Button variant="primary" style={{marginLeft: '0.5rem'}}>Go Back</Button>
+          <Button onClick={props.getNewZip} variant="primary" style={{marginLeft: '0.5rem'}}>Go Back</Button>
         </Card.Body>
       </Card>
     </Container>

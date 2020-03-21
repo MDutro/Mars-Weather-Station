@@ -39,7 +39,7 @@ export class MarsWeather extends React.Component {
       return weatherDay;
     })
     });
-  };
+  }
 
   render() {
     return (
@@ -51,7 +51,7 @@ export class MarsWeather extends React.Component {
             Weather Data from Elysium Planitia
           </p>
         </Jumbotron>
-        <Row className="justify-content-start" style={{overflow: 'hidden'}, {marginBottom: '0.5rem'}}>
+        <Row className="justify-content-start" style={{overflow: 'hidden', marginBottom: '0.5rem'}}>
         {/* Only render the weather cards if the fetch API call has completed */}
           {this.state.weather && this.state.weather.map((val, index) => (
             <Col sm="auto" key={index}>
