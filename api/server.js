@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/search', (req, res) => {
-  const localUrl = `http://api.openweathermap.org/data/2.5/weather?zip=${req.query.zip},us&units=metric&appid=${local}`
+  const localUrl = `http://api.weatherapi.com/v1/forecast.json?key=${local}&q=${req.query.zip}&days=1` 
   axios.get(localUrl)
   .then(response => response.data)
   .then(data => res.send(JSON.stringify(data)))

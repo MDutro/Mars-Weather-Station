@@ -23,7 +23,11 @@ export class LocalWeather extends React.Component {
         console.log(data)
         this.setState({localWeather: data})
         // Break up state into chunks that are easy to manipulate
-    }).then(() => this.setState({ city: this.state.localWeather.name, localMin: this.state.localWeather.main.temp_min, localMax: this.state.localWeather.main.temp_max }))
+    }).then(() => this.setState({ 
+      city: this.state.localWeather.location.name, 
+      localMin: this.state.localWeather.forecast.forecastday[0].day.mintemp_c, 
+      localMax: this.state.localWeather.forecast.forecastday[0].day.maxtemp_c 
+    }))
     .catch(err => console.log(err))
   }
 

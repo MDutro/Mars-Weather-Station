@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Col';
 import {MarsWeather} from "./MarsWeather";
 import {LocalWeather} from "./LocalWeather";
+import {RoverPics} from "./RoverPics";
 import './index.css';
 
 class App extends React.Component {
@@ -17,10 +18,10 @@ class App extends React.Component {
             <MarsWeather />
             <Row>
               <Col xs={3} className="leftCol"><LocalWeather /></Col>
-              <Col></Col>
+              <Col xs={8}><RoverPics /></Col>
             </Row>
           </Container>
-        </Container>
+        </Container> 
       </div> 
     );
   }
