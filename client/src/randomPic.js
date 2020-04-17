@@ -15,7 +15,7 @@ function randomPic() {
     '21444_PIA22232_1280.jpg',
     '21685_PIA22439_hires.jpg',
     '22116_PIA22743-16x9.jpg',
-    '22211_PIA22876-16_web.jpg',
+    'insightselfie.png',
     '22310_PIA22957_annotated.jpg',
     '22352_PIA23101.jpg',
     '22353_PIA23100.jpg',
