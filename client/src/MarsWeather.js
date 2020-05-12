@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import convert from './convert';
+import './MarsWeather.css'
 
 export class MarsWeather extends React.Component {
   state =  {weather : null};
@@ -43,8 +44,8 @@ export class MarsWeather extends React.Component {
     return (
      <div>
          {/* bg-transparent */}
-        <h1>Martian Weather Station</h1>
-          <p>
+        <h1 className="marsText">Martian Weather Station</h1>
+          <p className="marsText">
             Weather Data from Insight at Elysium Planitia
           </p>
         <Row className="justify-content-start" style={{overflow: 'hidden', marginBottom: '0.5rem', flexWrap: 'wrap'}}>

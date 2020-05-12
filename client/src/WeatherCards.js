@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import Card from 'react-bootstrap/Card';
+import './MarsWeather.css'
 
 const WeatherCards = (props) => {
   return (
