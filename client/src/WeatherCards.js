@@ -7,14 +7,14 @@ const WeatherCards = (props) => {
   return (
     <Card style={{ 
       width: '8rem', 
-      border: 'solid 2px #03e8fc',
+      border: 'solid 2px #47D1F7',
       background: 'black',
-      color: '#03e8fc'
+      color: '#47D1F7'
       }}>
       <Card.Body>
         <Card.Title>Day {props.sol}</Card.Title>
         {/* Take a slice of the UTC format date string to get 3 digit month, 2 digit day format */}
-        <Card.Subtitle className="mb-2 text-muted">{props.date.slice(4, 10)}</Card.Subtitle>
+        <Card.Subtitle className="mb-2">{props.date.slice(4, 10)}</Card.Subtitle>
         <Card.Text>
           High: {props.max} {props.deg} <br/>
           Low: {props.min} {props.deg}

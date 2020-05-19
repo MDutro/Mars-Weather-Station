@@ -5,7 +5,7 @@
 
 
 .image {
-  max-width: 35vw;
-  max-height: 300px;
+  padding: 0.5rem;
+  max-height: 500px;
   border-radius: 5%;
 }

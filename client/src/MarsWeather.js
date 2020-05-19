@@ -42,17 +42,20 @@ export class MarsWeather extends React.Component {
 
   render() {
     return (
-     <div>
-         {/* bg-transparent */}
-        <h1 className="marsText">Martian Weather Station</h1>
-          <p className="marsText">
-            Weather Data from Insight at Elysium Planitia
+     <Row>
+       <Col>
+        <Row>
+          <Col>
+           <h1 className="marsText">Martian Weather Station</h1>
+           <p className="marsText">Weather Data from Insight at Elysium Planitia
           </p>
-        <Row className="justify-content-start" style={{overflow: 'hidden', marginBottom: '0.5rem', flexWrap: 'wrap'}}>
+          </Col>
+        </Row>          
+        <Row style={{overflow: 'hidden', marginBottom: '0.5rem'}}>
         {/* Only render the weather cards if the fetch API call has completed */}
           {this.state.weather && this.state.weather.map((val, index) => (
             // sm="auto"
-            <Col style={{flex: "0 1 14%"}} key={index}>
+          <Col /*style={{flex: "0 1 14%"}}*/ key={index}>
               <WeatherCards
               // Props sent to WeatherCards.js
               sol={val.AT.dayNumber}
@@ -65,7 +68,8 @@ export class MarsWeather extends React.Component {
           }
         </Row>
         <Button onClick={this.onClick} style={{marginBottom: '2rem'}}>Convert Temps</Button>
-     </div>   
+      </Col>
+    </Row> 
     );
   }    
 }

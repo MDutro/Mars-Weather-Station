@@ -7,7 +7,7 @@ import './MarsWeather.css'
 const ZipCode = props => {
   return (
     <Container>
-      <Form onSubmit={props.onFormSubmit} style={{width: '25vw'}}>
+      <Form onSubmit={props.onFormSubmit}>
         <Form.Group>
           <Form.Label className="marsText">Find Local Weather</Form.Label>
           <Form.Control type="text" 
