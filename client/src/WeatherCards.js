@@ -5,12 +5,7 @@ import './MarsWeather.css'
 
 const WeatherCards = (props) => {
   return (
-    <Card style={{ 
-      width: '8rem', 
-      border: 'solid 2px #47D1F7',
-      background: 'black',
-      color: '#47D1F7'
-      }}>
+    <Card className="darkCard">
       <Card.Body>
         <Card.Title>Day {props.sol}</Card.Title>
         {/* Take a slice of the UTC format date string to get 3 digit month, 2 digit day format */}

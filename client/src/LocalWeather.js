@@ -3,6 +3,7 @@ import axios from 'axios';
 import convert from "./convert";
 import ZipCode from "./ZipCode";
 import WeatherResults from "./WeatherResults";
+import './MarsWeather.css'
 
 
 export class LocalWeather extends React.Component {
@@ -66,7 +67,7 @@ export class LocalWeather extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="localWeather">
         <this.GetWeather style={{paddingTop: '0'}}/>
       </div>
     );

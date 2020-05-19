@@ -14,10 +14,11 @@ const ZipCode = props => {
             value={props.zip} 
             onChange={props.handleChange} 
             maxLength="5" 
-            placeholder="Enter Zip Code" 
+            placeholder="Enter Zip Code"
+            style={{backgroundColor: 'black', border: 'solid 2px #47D1F7', color: '#47D1F7'}} 
           />
         </Form.Group>
-        <Button variant="primary" type="submit">Submit</Button>
+        <Button className="button" variant="primary" type="submit">Submit</Button>
       </Form>
     </Container>       
   ); 

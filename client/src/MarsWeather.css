@@ -2,4 +2,37 @@
   /* color: #39ff14; */
   color: #47D1F7;
   font-family: 'Press Start 2P', cursive;
+  margin-top: 0.15em;
+}
+
+.darkCard {
+  width: 11rem; 
+  border: solid 2px #47D1F7;
+  background: black;
+  color: #47D1F7;
+  font-size: 1.5rem;
+}
+
+.button {
+  border: solid 3px #47D1F7;
+  background-color: black;
+  color: #47D1F7;
+}
+
+.button:hover {
+  border: solid 3px #47D1F7;
+  background-color: #47D1F7;
+  color: black;
+}
+
+.button:active {
+  border: solid 3px #47D1F7;
+  background-color: black;
+  color: #47D1F7;
+}
+
+.localWeather {
+  display: flex;
+  justify-content: center;
+
 }

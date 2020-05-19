@@ -67,7 +67,7 @@ export class MarsWeather extends React.Component {
             </Col>))
           }
         </Row>
-        <Button onClick={this.onClick} style={{marginBottom: '2rem'}}>Convert Temps</Button>
+        <Button className="button" onClick={this.onClick} style={{marginBottom: '2rem'}}>Convert Temps</Button>
     </div> 
     );
   }    

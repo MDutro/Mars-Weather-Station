@@ -14,7 +14,7 @@ class App extends React.Component {
     return (
       <Container fluid>
         <MarsWeather />
-        <Row>
+        <Row style={{justifyContent: 'center'}}>
           <Col xs={3} className="leftCol"><LocalWeather /></Col>
           <Col xs={8}><RoverPics /></Col>
         </Row>
