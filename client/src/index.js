@@ -12,15 +12,13 @@ import './index.css';
 class App extends React.Component {
   render () {
     return (
-      <div>
-          <Container fluid>
-            <MarsWeather />
-            <Row>
-              <Col xs={3} className="leftCol"><LocalWeather /></Col>
-              <Col xs={8}><RoverPics /></Col>
-            </Row>
-          </Container>
-      </div> 
+      <Container fluid>
+        <MarsWeather />
+        <Row>
+          <Col xs={3} className="leftCol"><LocalWeather /></Col>
+          <Col xs={8}><RoverPics /></Col>
+        </Row>
+      </Container>
     );
   }
 }

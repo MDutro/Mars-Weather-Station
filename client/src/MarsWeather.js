@@ -42,8 +42,8 @@ export class MarsWeather extends React.Component {
 
   render() {
     return (
-     <Row>
-       <Col>
+     <div>
+      
         <Row>
           <Col>
            <h1 className="marsText">Martian Weather Station</h1>
@@ -68,8 +68,7 @@ export class MarsWeather extends React.Component {
           }
         </Row>
         <Button onClick={this.onClick} style={{marginBottom: '2rem'}}>Convert Temps</Button>
-      </Col>
-    </Row> 
+    </div> 
     );
   }    
 }
