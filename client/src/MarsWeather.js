@@ -2,7 +2,6 @@ import React from "react";
 import WeatherCards from './WeatherCards';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
 import convert from './convert';
 import './MarsWeather.css'
 
@@ -67,7 +66,7 @@ export class MarsWeather extends React.Component {
             </Col>))
           }
         </Row>
-        <Button className="button" onClick={this.onClick} style={{marginBottom: '2rem'}}>Convert Temps</Button>
+        <button className="button" onClick={this.onClick} style={{marginBottom: '2rem'}}>Convert Temps</button>
     </div> 
     );
   }    

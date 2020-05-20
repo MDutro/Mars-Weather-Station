@@ -14,22 +14,31 @@
 }
 
 .button {
+  width: 250px;
+  background: black;
   border: solid 3px #47D1F7;
-  background-color: black;
-  color: #47D1F7;
+  padding: 15px;
+  margin: 5px;
+  color: #47D1F7 ;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.0rem;
+  text-decoration: none;
+  border-radius: 3px;
+  align-self: center;
 }
 
-.button:hover {
+button:hover, button:focus {
   border: solid 3px #47D1F7;
   background-color: #47D1F7;
   color: black;
+  outline: 0;
 }
 
-.button:active {
+/* .button:focus {
   border: solid 3px #47D1F7;
   background-color: black;
   color: #47D1F7;
-}
+} */
 
 .localWeather {
   display: flex;
