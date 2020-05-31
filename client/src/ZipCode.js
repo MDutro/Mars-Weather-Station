@@ -1,7 +1,6 @@
 import React from "react";
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import './MarsWeather.css'
 
 const ZipCode = props => {
@@ -18,7 +17,7 @@ const ZipCode = props => {
             style={{backgroundColor: 'black', border: 'solid 2px #47D1F7', color: '#47D1F7', fontSize: '1.5rem'}} 
           />
         </Form.Group>
-        <Button className="button" variant="primary" type="submit">Submit</Button>
+        <button className="button" variant="primary" type="submit">Submit</button>
       </Form>
     </Container>       
   ); 
