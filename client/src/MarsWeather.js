@@ -13,7 +13,6 @@ export class MarsWeather extends React.Component {
     fetch("http://localhost:3001")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         // Take the day number key and add it to the AT object as a value so it can be passed as a prop to WeatherCards.js
         const weather = data.sol_keys.map((key) => {
           if (data[key].AT) {
