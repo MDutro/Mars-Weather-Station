@@ -1,20 +1,22 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import WeatherCards from "./WeatherCards";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import convert from "./convert";
 import "./MarsWeather.css";
 
-export class MarsWeather extends React.Component {
-  state = { weather: null };
+export const MarsWeather = () => {
+  const [weather, setWeather] = useState({weather: null})
 
   // Get weather data from NASA API
-  componentDidMount() {
+  useEffect(() => {
+    console.log("running")
     fetch("http://localhost:3001")
       .then((res) => res.json())
       .then((data) => {
         // Take the day number key and add it to the AT object as a value so it can be passed as a prop to WeatherCards.js
-        const weather = data.sol_keys.map((key) => {
+        console.log(data)
+        const weather = data.validity_checks.sols_checked.map((key) => {
           if (data[key].AT) {
             data[key].AT.dayNumber = key * 1;
             // Add a key: value pair to toggle between Celsius and Farenheit
@@ -25,16 +27,19 @@ export class MarsWeather extends React.Component {
             data[key].noData = true;
             return data[key];
           }
+          
         });
-        this.setState({ weather });
+        console.log(weather)
+        console.log("setting weather")
+        setWeather({ weather: weather });
       })
       .catch(console.log);
-  }
+  }, [])
 
   // Use convert() to calculate C or F for min and max temps for each Martian day
-  onClick = () => {
-    this.setState({
-      weather: this.state.weather.map((weatherDay) => {
+  const onClick = () => {
+    setWeather({
+      weather: weather.weather.map((weatherDay) => {
         if (weatherDay.AT) {
           const newMn = convert(weatherDay.AT.mn, weatherDay.AT.isFarenheit);
           weatherDay.AT.mn = newMn;
@@ -51,7 +56,7 @@ export class MarsWeather extends React.Component {
     });
   };
 
-  render() {
+  // render() {
     return (
       <div>
         <Row>
@@ -64,8 +69,8 @@ export class MarsWeather extends React.Component {
         </Row>
         <Row style={{ overflow: "hidden", marginBottom: "0.5rem" }}>
           {/* Only render the weather cards if the fetch API call has completed */}
-          {this.state.weather &&
-            this.state.weather.map((val, index) => (
+          {weather.weather &&
+            weather.weather.map((val, index) => (
               <Col /*style={{flex: "0 1 14%"}}*/ key={index}>
                 <WeatherCards
                   // Props sent to WeatherCards.js
@@ -81,12 +86,12 @@ export class MarsWeather extends React.Component {
         </Row>
         <button
           className="button"
-          onClick={this.onClick}
+          onClick={onClick}
           style={{ marginBottom: "2rem" }}
         >
           Convert Temps
         </button>
       </div>
     );
-  }
+  // }
 }
