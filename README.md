@@ -1,6 +1,8 @@
 
 ## Mars Weather Station
 
+### Please Note - The Insight rover is no longer publishing weather data at this time. Hopefully, NASA will revive this API soon.
+
 This is a simple app written in React that works with NASA's API for its InSight weather station at Elysium Planitia on Mars aimed at elementary age children.
 
 The app loads and displays weather data for a week on Mars. Please note that the data displayed will be a few days behind the current date on Earth. I have included a button to convert temperatures from degrees Celsius to degrees Farenheit and toggle back to Celsius again.
