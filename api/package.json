@@ -9,7 +9,7 @@
   "author": "Micah Dutro",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.2",
+    "axios": "^0.30.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.21.2"
